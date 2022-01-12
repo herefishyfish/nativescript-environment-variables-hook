@@ -5,7 +5,15 @@ This plugin adds a hook to find and replace environment variables within your `A
 
 # Installation
 
-`ns plugin add nativescript-environment-variable-hook`
+`ns plugin add nativescript-environment-variables-hook`
+
+# Predefined Variables
+The plugin provides the following tokens automatically:
+
+| Token           | Description                                            |
+|-----------------|--------------------------------------------------------|
+| APP_ID          | Application ID as defined in `nativescript.config.ts`  |
+
 
 # Usage
 
@@ -41,13 +49,8 @@ You can extend the functionality of this hook by adding in additional relative f
 ```
 export default {
   id: 'org.nativescript.example',
-  appPath: 'src',
-  appResourcesPath: 'app_resources',
-  android: {
-    v8Flags: '--expose_gc',
-    markingMode: 'none'
-  },
-  environmentVariableHook: {
+  ...
+  environmentVariablesHook: {
     additionalPaths: [
       'platforms/android/*'
     ]
