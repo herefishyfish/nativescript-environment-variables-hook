@@ -4,7 +4,7 @@ This plugin adds a hook to find and replace environment variables within your `A
 
 # Installation
 
-`ns plugin add nativescript-environment-variables-hook`
+`npm install nativescript-environment-variables-hook --save-dev`
 
 # Predefined Variables
 The plugin provides the following tokens automatically:
