@@ -1,7 +1,6 @@
 # Nativescript Environment Variable Hook
 
-This plugin adds a hook to find and replace environment variables within your `AndroidManifest.xml` and `Info.plist`.
-
+This plugin adds a hook to find and replace environment variables within your `AndroidManifest.xml`, `Info.plist` and `app.entitlements`.
 
 # Installation
 
@@ -52,7 +51,8 @@ export default {
   ...
   environmentVariablesHook: {
     additionalPaths: [
-      'platforms/android/*'
+      'platforms/android/example.xml',
+      'platforms/ios/example.txt'
     ]
   }
 } as NativeScriptConfig;
