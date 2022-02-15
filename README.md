@@ -12,13 +12,22 @@ The plugin provides the following tokens automatically:
 | Token           | Description                                            |
 |-----------------|--------------------------------------------------------|
 | APP_ID          | Application ID as defined in `nativescript.config.ts`  |
+| APP_VERSION     | Version taken from `package.json`                      |
+| APP_VERSION_CODE| As above but formatted to MMmmpp (Major, Minor, Patch) |
 
 
 # Usage
 
-Example
+Examples
 
 *App_Resources\Android\src\main\AndroidManifest.xml*
+```
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	package="__PACKAGE__"
+	android:versionCode="{{APP_VERSION_CODE}}"
+	android:versionName="{{APP_VERSION}}">
+```
 ```
 <activity android:name="org.nativescript.auth0.RedirectActivity" tools:node="replace">
   <intent-filter>
@@ -29,8 +38,8 @@ Example
 
     <data
       android:host="{{AUTH0_DOMAIN}}"
-      android:pathPrefix="/android/{{BUNDLE_IDENTIFIER}}/callback"
-      android:scheme="{{BUNDLE_IDENTIFIER}}" />
+      android:pathPrefix="/android/{{APP_ID}}/callback"
+      android:scheme="{{APP_ID}}" />
   </intent-filter>
 </activity>
 ```
@@ -38,7 +47,6 @@ Example
 *.env or Environment Variables*
 ```
 AUTH0_DOMAIN = "my.domain.auth0.com"
-BUNDLE_IDENTIFIER = "org.nativescript.example"
 ```
 
 # Additional Templated Files
