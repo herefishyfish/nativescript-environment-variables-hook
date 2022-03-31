@@ -1,6 +1,6 @@
 {
   "name": "nativescript-environment-variables-hook",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Add env variables to your manifest and plist file.",
   "nativescript": {
     "platforms": {
